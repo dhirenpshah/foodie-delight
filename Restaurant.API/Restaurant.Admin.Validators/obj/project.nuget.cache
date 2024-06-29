@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "0sAVDnYsywX/B1jY5Duc+5muyicHVun+c3uADVMx1HKO2m2UcDmYe+WtuL8i2+42eNjqdYecRpMCcXiLsk4zpA==",
+  "success": true,
+  "projectFilePath": "/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Validators/Restaurant.Admin.Validators.csproj",
+  "expectedPackageFiles": [
+    "/Users/dhirenshah/.nuget/packages/fluentvalidation/11.9.2/fluentvalidation.11.9.2.nupkg.sha512"
+  ],
+  "logs": []
+}

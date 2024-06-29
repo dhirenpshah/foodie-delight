@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Restaurant.Admin.Business/1.0.0": {
+        "dependencies": {
+          "Restaurant.Admin.Models": "1.0.0"
+        },
+        "runtime": {
+          "Restaurant.Admin.Business.dll": {}
+        }
+      },
+      "Restaurant.Admin.Models/1.0.0": {
+        "runtime": {
+          "Restaurant.Admin.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Restaurant.Admin.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Restaurant.Admin.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,15 @@
+/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/bin/Debug/net7.0/Restaurant.Admin.Business.deps.json
+/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/bin/Debug/net7.0/Restaurant.Admin.Business.dll
+/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/bin/Debug/net7.0/Restaurant.Admin.Business.pdb
+/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/bin/Debug/net7.0/Restaurant.Admin.Models.dll
+/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/bin/Debug/net7.0/Restaurant.Admin.Models.pdb
+/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/obj/Debug/net7.0/Restaurant.Admin.Business.csproj.AssemblyReference.cache
+/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/obj/Debug/net7.0/Restaurant.Admin.Business.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/obj/Debug/net7.0/Restaurant.Admin.Business.AssemblyInfoInputs.cache
+/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/obj/Debug/net7.0/Restaurant.Admin.Business.AssemblyInfo.cs
+/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/obj/Debug/net7.0/Restaurant.Admin.Business.csproj.CoreCompileInputs.cache
+/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/obj/Debug/net7.0/Restaurant.Admin.Business.csproj.CopyComplete
+/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/obj/Debug/net7.0/Restaurant.Admin.Business.dll
+/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/obj/Debug/net7.0/refint/Restaurant.Admin.Business.dll
+/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/obj/Debug/net7.0/Restaurant.Admin.Business.pdb
+/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/obj/Debug/net7.0/ref/Restaurant.Admin.Business.dll

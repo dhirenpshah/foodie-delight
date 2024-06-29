@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="RestaurantModelValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.9.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Restaurant.Admin.Models\Restaurant.Admin.Models.csproj" />
+    <ProjectReference Include="..\Restaurant.Admin.Business\Restaurant.Admin.Business.csproj" />
+  </ItemGroup>
+</Project>

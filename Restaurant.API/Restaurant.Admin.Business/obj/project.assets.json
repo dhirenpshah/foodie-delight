@@ -1,0 +1,93 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "Restaurant.Admin.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Restaurant.Admin.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Restaurant.Admin.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Restaurant.Admin.Models/1.0.0": {
+      "type": "project",
+      "path": "../Restaurant.Admin.Models/Restaurant.Admin.Models.csproj",
+      "msbuildProject": "../Restaurant.Admin.Models/Restaurant.Admin.Models.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "Restaurant.Admin.Models >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/dhirenshah/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/Restaurant.Admin.Business.csproj",
+      "projectName": "Restaurant.Admin.Business",
+      "projectPath": "/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/Restaurant.Admin.Business.csproj",
+      "packagesPath": "/Users/dhirenshah/.nuget/packages/",
+      "outputPath": "/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Business/obj/",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "/Users/dhirenshah/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {
+            "/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Models/Restaurant.Admin.Models.csproj": {
+              "projectPath": "/Users/dhirenshah/Projects/Restaurant.Management/Restaurant.API/Restaurant.Admin.Models/Restaurant.Admin.Models.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
