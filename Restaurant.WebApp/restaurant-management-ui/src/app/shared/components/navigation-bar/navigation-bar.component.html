@@ -1,0 +1,9 @@
+<p-menubar [model]="navigationLinks">
+    <ng-template pTemplate="item" let-item>
+        <ng-container *ngIf="item.route;">
+            <span [routerLink]="item.route" class="p-menuitem-link">
+                <span style="margin-top: -3px;" [class]="item.icon"></span>&nbsp;{{ item.label }}
+            </span>
+        </ng-container>
+    </ng-template>
+</p-menubar>

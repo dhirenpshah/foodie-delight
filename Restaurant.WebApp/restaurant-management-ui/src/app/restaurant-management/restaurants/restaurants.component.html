@@ -1,0 +1,48 @@
+<div class="card w-75 m-auto">
+    <div class="card-header">
+        <div class="row">
+            <h4 class="col-10 mt-2">Restaurants</h4>
+            <p-button (click)="addRestaurant()" class="col-2 text-end" icon="pi pi-plus" label="Add" [text]="true" severity="info" />
+        </div>
+    </div>
+    <div class="card-body p-0">
+        <p-table #table [value]="restaurants" [paginator]="true" [rows]="5" [tableStyle]="{ 'min-width': '50rem' }"
+            [rowsPerPageOptions]="[5, 10, 20]" [globalFilterFields]="getGlobalFilterFields()">
+            <ng-template pTemplate="caption">
+                <div class="flex">
+                    <p-iconField iconPosition="left" class="ml-auto">
+                        <p-inputIcon>
+                            <i class="pi pi-search"></i>
+                        </p-inputIcon>
+                        <input pInputText type="text" [(ngModel)]="searchText"
+                            (input)="table.filterGlobal(searchText, 'contains')" placeholder="Search Restaurants" />
+                    </p-iconField>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th *ngFor="let gridColumn of gridColumns" pSortableColumn={{gridColumn.Field}}>
+                        {{gridColumn.Header}}
+                        <p-sortIcon field={{gridColumn.Field}} />
+                    </th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-restaurant>
+                <tr>
+                    <td *ngFor="let gridColumn of gridColumns">{{ restaurant[gridColumn.Field] }}</td>
+                    <td>
+                        <p-button icon="pi pi-pen-to-square" (click)="editRestaurant(restaurant.Id)" [text]="true" severity="info" />
+                    </td>
+                    <td>
+                        <p-button icon="pi pi-trash" (click)="confirmDelete($event, restaurant)" [text]="true"
+                            severity="danger" />
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+<p-toast />
+<p-confirmDialog />

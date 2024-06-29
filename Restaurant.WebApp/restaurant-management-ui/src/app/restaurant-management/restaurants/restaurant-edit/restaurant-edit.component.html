@@ -1,0 +1,47 @@
+<div class="card w-50 m-auto">
+    <div class="card-header">
+        <h4 class="mt-2">Add Restaurant</h4>
+    </div>
+    <div class="card-body">
+        <form #restaurantEditForm="ngForm" (ngSubmit)="saveRestaurant(restaurantEditForm.valid)">
+            <div class="form-group row">
+                <div class="col-3">
+                    <label class="mt-5px">Name : </label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" placeholder="Enter Name"
+                        [(ngModel)]="restaurant.name" type="text" #name="ngModel" name="name" required/>
+                     <span class="text-danger"
+                        *ngIf="name.invalid && restaurantEditForm.submitted">Name is required.</span>
+                </div>
+            </div>
+            <div class="form-group row pt-3">
+                <div class="col-3">
+                    <label class="mt-5px">Location : </label>
+                </div>
+                <div class="col-9">
+                    <input class="form-control" placeholder="Enter Location" [(ngModel)]="restaurant.location"
+                        type="text"  #location="ngModel" name="location" required/>
+                    <span class="text-danger"
+                        *ngIf="location.invalid && restaurantEditForm.submitted">Location is required.</span>
+                </div>
+            </div>
+            <div class="form-group row pt-3">
+                <div class="col-3">
+                    <label class="mt-5px">Description : </label>
+                </div>
+                <div class="col-9">
+                    <textarea placeholder="Enter Description" [(ngModel)]="restaurant.description" class="form-control">
+                    </textarea>
+                </div>
+            </div>
+            <div class="form-group row pt-3">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary me-2">Save</button>
+                    <button (click)="navigateToRestaurants()" class="btn btn-secondary">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<p-toast />

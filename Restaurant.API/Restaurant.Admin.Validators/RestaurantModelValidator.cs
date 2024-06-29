@@ -18,7 +18,7 @@ namespace Restaurant.Admin.Validators
 
             RuleFor(_ => _.Name).NotEmpty().WithMessage(NameRequired);
             RuleFor(_ => _.Location).NotEmpty().WithMessage(LocationRequired);
-            RuleFor(_ => _.Name).Must(_ => IsNameDuplicate(_))
+            RuleFor(_ => _.Name).Must(_ => !IsNameDuplicate(_))
                 .When(_ => !String.IsNullOrEmpty(_.Name))
                 .WithMessage(NameExists);
         }

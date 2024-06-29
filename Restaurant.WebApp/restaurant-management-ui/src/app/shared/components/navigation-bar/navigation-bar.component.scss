@@ -1,0 +1,16 @@
+::ng-deep .p-menubar-root-list {
+    margin-bottom: 0;
+}
+::ng-deep .p-menubar.p-component {
+    padding: 0;
+    background: darkgreen;
+}
+.p-menuitem-link {
+    color: white;
+}
+.p-menuitem-link:hover {
+    background: darkgoldenrod;
+}
+::ng-deep .p-menuitem-content {
+    background: darkgreen;
+}
