@@ -1,59 +1,11 @@
-﻿using Restaurant.Admin.Models;
+﻿using Restaurant.Admin.Business.Contracts;
+using Restaurant.Admin.Models;
 
 namespace Restaurant.Admin.Business;
 
-public class RestaurantService
+public class RestaurantService: IRestaurantService
 {
-    private static List<RestaurantModel> _restaurants = GenerateMockRestaurants();
-
-    private static List<RestaurantModel> GenerateMockRestaurants()
-    {
-        return new()
-        {
-            new()
-            {
-                Id = Guid.NewGuid(),
-                Description = "The first burger restaurant",
-                Location = "Rajkot",
-                Name = "Burger Singh"
-            },
-            new()
-            {
-                Id = Guid.NewGuid(),
-                Description = "The city's largest multi-cuisine Restaurant",
-                Location = "Rajkot",
-                Name = "Lemon Tree"
-            },
-            new()
-            {
-                Id = Guid.NewGuid(),
-                Description = "The city's largest multi-cuisine Restaurant",
-                Location = "Rajkot",
-                Name = "Ravi Palace"
-            },
-            new()
-            {
-                Id = Guid.NewGuid(),
-                Description = "The city's largest multi-cuisine Restaurant",
-                Location = "Surat",
-                Name = "Taj Hotel"
-            },
-            new()
-            {
-                Id = Guid.NewGuid(),
-                Description = "The city's largest multi-cuisine Restaurant",
-                Location = "Surat",
-                Name = "Flavours Restaurant"
-            },
-            new()
-            {
-                Id = Guid.NewGuid(),
-                Description = "The city's largest multi-cuisine Restaurant",
-                Location = "Surat",
-                Name = "The Imperial Palace"
-            },
-        };
-    }
+    private static List<RestaurantModel> _restaurants = new();
 
 
     public List<RestaurantModel> GetAllRestaurants()
@@ -63,7 +15,12 @@ public class RestaurantService
 
     public RestaurantModel GetRestaurantById(Guid id)
     {
-        return _restaurants.FirstOrDefault(_ => _.Id.Equals(id));
+        var restaurant = _restaurants.FirstOrDefault(_ => _.Id.Equals(id));
+        if(restaurant == null)
+        {
+            throw new Exception($"Restaurant with Id: {id} does not exists");
+        }
+        return restaurant;
     }
 
     public RestaurantModel SaveRestaurant(RestaurantModel restaurant)
@@ -84,16 +41,17 @@ public class RestaurantService
 
     private RestaurantModel UpdateRestaurant(RestaurantModel restaurant)
     {
-        var index = _restaurants.IndexOf(restaurant);
-        _restaurants[index] = restaurant;
+        var existingRestaurant = GetRestaurantById(restaurant.Id.Value);
+        _restaurants.Remove(existingRestaurant);
+        _restaurants.Add(restaurant);
         return restaurant;
     }
 
-    public object? DeleteRestaurant(Guid id)
+    public Guid DeleteRestaurant(Guid id)
     {
         var restaurant = GetRestaurantById(id);
         _restaurants.Remove(restaurant);
-        return restaurant;
+        return id;
     }
 }
 

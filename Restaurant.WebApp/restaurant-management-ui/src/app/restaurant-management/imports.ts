@@ -6,9 +6,9 @@ import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
-import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { NgModule } from '@angular/core';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
     imports:[
@@ -20,7 +20,8 @@ import { NgModule } from '@angular/core';
         TableModule,
         IconFieldModule,
         InputIconModule,
-        InputTextModule
+        InputTextModule,
+        NgxSpinnerModule
     ],
     exports: [
         FormsModule,
@@ -31,7 +32,8 @@ import { NgModule } from '@angular/core';
         TableModule,
         IconFieldModule,
         InputIconModule,
-        InputTextModule
+        InputTextModule,
+        NgxSpinnerModule
     ],
     providers: []
 })

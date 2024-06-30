@@ -1,6 +1,6 @@
 <div class="card w-50 m-auto">
     <div class="card-header">
-        <h4 class="mt-2">Add Restaurant</h4>
+        <h4 class="mt-2">{{id ? 'Edit': 'Add'}} Restaurant</h4>
     </div>
     <div class="card-body">
         <form #restaurantEditForm="ngForm" (ngSubmit)="saveRestaurant(restaurantEditForm.valid)">
@@ -31,17 +31,18 @@
                     <label class="mt-5px">Description : </label>
                 </div>
                 <div class="col-9">
-                    <textarea placeholder="Enter Description" [(ngModel)]="restaurant.description" class="form-control">
+                    <textarea placeholder="Enter Description" name="description" [(ngModel)]="restaurant.description" class="form-control">
                     </textarea>
                 </div>
             </div>
             <div class="form-group row pt-3">
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary me-2">Save</button>
-                    <button (click)="navigateToRestaurants()" class="btn btn-secondary">Cancel</button>
+                    <button type="reset" (click)="navigateToRestaurants()" class="btn btn-secondary">Cancel</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
 <p-toast />
+<ngx-spinner type="ball-circus"></ngx-spinner>

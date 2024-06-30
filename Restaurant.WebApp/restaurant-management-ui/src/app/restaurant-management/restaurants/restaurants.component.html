@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="card-body p-0">
-        <p-table #table [value]="restaurants" [paginator]="true" [rows]="5" [tableStyle]="{ 'min-width': '50rem' }"
+        <p-table #table [value]="restaurants" *ngIf="restaurants.length > 0; else noDataFound" [paginator]="true" [rows]="5" 
             [rowsPerPageOptions]="[5, 10, 20]" [globalFilterFields]="getGlobalFilterFields()">
             <ng-template pTemplate="caption">
                 <div class="flex">
@@ -33,7 +33,7 @@
                 <tr>
                     <td *ngFor="let gridColumn of gridColumns">{{ restaurant[gridColumn.Field] }}</td>
                     <td>
-                        <p-button icon="pi pi-pen-to-square" (click)="editRestaurant(restaurant.Id)" [text]="true" severity="info" />
+                        <p-button icon="pi pi-pen-to-square" (click)="editRestaurant(restaurant)" [text]="true" severity="info" />
                     </td>
                     <td>
                         <p-button icon="pi pi-trash" (click)="confirmDelete($event, restaurant)" [text]="true"
@@ -42,7 +42,11 @@
                 </tr>
             </ng-template>
         </p-table>
+        <ng-template #noDataFound>
+            <div class="text-center py-2">No restaurants are present. Please add few restaurants.</div>
+        </ng-template>
     </div>
 </div>
 <p-toast />
 <p-confirmDialog />
+<ngx-spinner type="ball-circus"></ngx-spinner>

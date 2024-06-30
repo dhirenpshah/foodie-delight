@@ -5,6 +5,8 @@ import { GridColumn } from '../../shared/domain/models/gird-column.model';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
 import { ImportsModule } from '../imports';
+import { finalize } from 'rxjs';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-restaurants',
@@ -12,7 +14,7 @@ import { ImportsModule } from '../imports';
   imports: [ImportsModule],
   templateUrl: './restaurants.component.html',
   styleUrl: './restaurants.component.scss',
-  providers: [ConfirmationService, MessageService]
+  providers: [ConfirmationService, MessageService, NgxSpinnerService]
 })
 export class RestaurantsComponent implements OnInit{
   restaurants: Array<Restaurant> = [];
@@ -22,7 +24,8 @@ export class RestaurantsComponent implements OnInit{
   constructor(private restaurantService: RestaurantService,
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
-    private router: Router){}
+    private router: Router,
+    private spinnerService: NgxSpinnerService){}
 
   ngOnInit(): void {
     this.fillGridColumns();
@@ -38,7 +41,13 @@ export class RestaurantsComponent implements OnInit{
   }
 
   private loadRestaurants(): void {
-    this.restaurantService.loadRestaurants().subscribe({next: (restaurants) =>{
+    this.spinnerService.show();
+    this.restaurantService.loadRestaurants()
+    .pipe(finalize(() => {
+      setTimeout(() => {
+        this.spinnerService.hide();
+      }, 1000);
+    })).subscribe({next: (restaurants) =>{
       this.restaurants = restaurants;
     }, 
     error: (error) => { this.messageService.add({ severity: 'danger', summary: 'Error', detail: error.Message });}});
@@ -76,8 +85,8 @@ export class RestaurantsComponent implements OnInit{
     this.router.navigate(['restaurant/edit']);
   }
 
-  editRestaurant(id: string): void {
-    this.router.navigate(['restaurant/edit', { queryParams: {id: id}}]);
+  editRestaurant(restaurant: Restaurant): void {
+    this.router.navigate(['restaurant/edit'], { queryParams: {id: restaurant.id}});
   }
 }
 

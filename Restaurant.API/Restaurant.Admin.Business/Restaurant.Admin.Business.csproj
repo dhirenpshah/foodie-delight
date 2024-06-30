@@ -9,4 +9,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Restaurant.Admin.Models\Restaurant.Admin.Models.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Contracts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+  </ItemGroup>
 </Project>
