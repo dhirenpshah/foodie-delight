@@ -50,7 +50,7 @@ export class RestaurantsComponent implements OnInit{
     })).subscribe({next: (restaurants) =>{
       this.restaurants = restaurants;
     }, 
-    error: (error) => { this.messageService.add({ severity: 'danger', summary: 'Error', detail: error.Message });}});
+    error: (error) => { this.showErrorMessage(error.error);}});
   }
 
   getGlobalFilterFields(): Array<string> {
@@ -59,8 +59,10 @@ export class RestaurantsComponent implements OnInit{
 
   deleteRestaurant(restaurant: Restaurant): void {
     this.restaurantService.deleteRestaurant(restaurant.id).subscribe({ next: (restaurant) =>{
-      this.messageService.add({ severity: 'success', summary: 'Confirmed', detail: 'Restaurant deleted' });
+      this.showSuccessMessage('Restaurant deleted');
       this.loadRestaurants(); 
+    }, error: (error) => {
+      this.showErrorMessage(error.error);
     }})
   }
 
@@ -87,6 +89,14 @@ export class RestaurantsComponent implements OnInit{
 
   editRestaurant(restaurant: Restaurant): void {
     this.router.navigate(['restaurant/edit'], { queryParams: {id: restaurant.id}});
+  }
+
+  showErrorMessage(message: string): void {
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: message });
+  }
+
+  showSuccessMessage(message:string) {
+    this.messageService.add({ severity: 'success', summary: 'Confirmed', detail: message});
   }
 }
 

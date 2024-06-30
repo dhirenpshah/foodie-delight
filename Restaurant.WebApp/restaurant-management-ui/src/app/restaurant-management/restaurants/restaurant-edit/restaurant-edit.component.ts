@@ -53,7 +53,7 @@ export class RestaurantEditComponent {
         clearTimeout(redirectTimeout);
       }, 500);
     }, error: (error) => {
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error });
+      this.showErrorMessage(error.error);
     } })
   }
 
@@ -67,7 +67,11 @@ export class RestaurantEditComponent {
     })).subscribe({ next: (restaurant) => {
       this.restaurant = restaurant;
     }, error: (error) => {
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error });
+      this.showErrorMessage(error.error)
     }})
+  }
+
+  showErrorMessage(message: string): void {
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: message });
   }
 }
